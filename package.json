@@ -1,0 +1,41 @@
+{
+  "name": "kdf-pistachio",
+  "version": "0.0.0",
+  "description": "Templating engine for KDFramework",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kdframework/pistachio"
+  },
+  "directories": {
+    "test": "jest"
+  },
+  "scripts": {
+    "test": "node ./node_modules/jest-cli/bin/jest.js"
+  },
+  "author": "Umut Sirin <u@kd.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "jest-cli": "^0.2.1",
+    "kdf-core": "0.0.x"
+  },
+  "jest": {
+    "testDirectoryName": "test",
+    "scriptPreprocessor": "./node_modules/kdf-core/test/coffee-processor.js",
+    "moduleFileExtensions": [
+      "coffee",
+      "js",
+      "json"
+    ],
+    "testFileExtensions": [
+      "coffee",
+      "js",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "htmlparser2": "^3.8.2",
+    "hyperscript": "^1.4.2"
+  }
+}
