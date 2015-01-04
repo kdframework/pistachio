@@ -32,6 +32,10 @@
       "coffee",
       "js",
       "json"
+    ],
+    "testPathIgnorePatterns": [
+      "./test/fixtures/",
+      "./node_modules"
     ]
   },
   "dependencies": {
