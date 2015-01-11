@@ -1,4 +1,11 @@
 
+0.0.2 / 2015-01-11
+==================
+
+ * add `PistachioMixin` to be used for compiled classes.
+ * pistachio: export `Pistachio.compileFile`
+ * add `FileCompiler`
+
 0.0.1 / 2014-12-21
 ==================
 

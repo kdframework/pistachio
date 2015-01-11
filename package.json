@@ -1,6 +1,6 @@
 {
   "name": "kdf-pistachio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Templating engine for KDFramework",
   "main": "lib/index.js",
   "repository": {
@@ -32,9 +32,14 @@
       "coffee",
       "js",
       "json"
+    ],
+    "testPathIgnorePatterns": [
+      "./test/fixtures/",
+      "./node_modules"
     ]
   },
   "dependencies": {
+    "falafel": "^0.3.1",
     "htmlparser2": "^3.8.2",
     "hyperscript": "^1.4.2"
   }

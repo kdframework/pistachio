@@ -2,6 +2,8 @@ jest.autoMockOff()
 
 htmlparser = require 'htmlparser2'
 
+fs = require 'fs'
+
 Pistachio = require '../src/pistachio'
 
 describe 'Pistachio', ->
@@ -75,17 +77,14 @@ describe 'Pistachio', ->
       expect(compiled).toBe expected
 
 
-    xit 'compiles', ->
+  describe '.compileFile', ->
 
-      pistachio = "{span#foo.bar.baz[data-id=qux]{> @view}}"
-      # pistachio = "{span#foo.class.bar[data-id=baz]{ #(data)}}"
+    it 'compiles given file', ->
 
-      compiled = Pistachio.compile pistachio
+      testFile = fs.readFileSync("#{__dirname}/fixtures/test.js").toString 'utf8'
+      expected = fs.readFileSync("#{__dirname}/fixtures/compiled.js").toString 'utf8'
 
-      expected =
-        """
-        v = new KDViewNode({tagName: 'span', domId: 'bar', 'cssClass: 'bar baz', attributes: { 'data-id': 'qux' }, subviews: [this.view]})
-        """
+      compiled = Pistachio.compileFile(testFile).toString 'utf8'
 
       expect(compiled).toBe expected
 
